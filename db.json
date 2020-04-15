@@ -1,14 +1,14 @@
 {
   "productos": [
     {
-      "id": 1,
       "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
+      "precio": "31111",
+      "id": 1
     },
     {
-      "id": 2,
       "nombre": "Jugo de Naranja",
-      "precio": "1"
+      "precio": "1",
+      "id": 2
     },
     {
       "nombre": "Jugo de Naranja",
@@ -29,6 +29,11 @@
       "nombre": "Tequila",
       "precio": "500",
       "id": 6
+    },
+    {
+      "nombre": "Whisky",
+      "precio": "350",
+      "id": 7
     }
   ]
 }

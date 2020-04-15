@@ -13,7 +13,8 @@ const Productos = () => {
     useEffect(() => {
         const cargarProductos = () => dispatch(obtenerProductosAction());
         cargarProductos();
-    }, [dispatch]);
+        // eslint-disable-next-line
+    }, []);
 
     // Acceder al state del store
     const productos = useSelector(state => state.productos.productos);
@@ -34,11 +35,11 @@ const Productos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {productos.length === 0
+                    {(productos === undefined)
                         ? null
                         : (productos.map(producto => (
                             <Producto
-                                key={producto.id}
+                                key={producto._id}
                                 producto={producto}
                             />
                         )))

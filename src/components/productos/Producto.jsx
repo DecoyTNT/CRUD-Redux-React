@@ -6,9 +6,10 @@ import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { borrarProductoAction } from '../../actions/productoEliminarActions';
 import { obtenerProductoEditarAction } from '../../actions/productoEditarActions';
+// import { obtenerProductosAction } from '../../actions/productosObtenerActions';
 
 const Producto = ({ producto }) => {
-    const { nombre, precio, id } = producto;
+    const { nombre, precio, _id } = producto;
 
     const dispatch = useDispatch();
     const history = useHistory(); // Habiliar history para redireccion
@@ -54,7 +55,7 @@ const Producto = ({ producto }) => {
                 <button
                     type="button"
                     className="btn btn-danger"
-                    onClick={() => confirmarEliminarProducto(id)}
+                    onClick={() => confirmarEliminarProducto(_id)}
                 >
                     Eliminar
                 </button>

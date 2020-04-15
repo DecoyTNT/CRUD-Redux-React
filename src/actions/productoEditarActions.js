@@ -24,10 +24,11 @@ export function editarProductoAction(producto) {
         dispatch(editarProducto())
 
         try {
-            const resp = await clienteAxios.put(`/productos/${producto.id}`, producto);
+            await clienteAxios.put(`/productos/${producto._id}`, producto);
             dispatch(editarProductoExito(producto));
 
         } catch (error) {
+            console.log(error);
             dispatch(editarProductoError())
         }
     }

@@ -19,7 +19,7 @@ const EditarProducto = () => {
 
     useEffect(() => {
         setProducto(productoSelector)
-    }, []);
+    }, [productoSelector]);
 
     // Leer datos del formulario
     const onChangeFormulario = e => {

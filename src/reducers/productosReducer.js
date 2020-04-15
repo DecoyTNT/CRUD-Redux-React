@@ -31,6 +31,7 @@ export default function (state = initialState, action) {
             };
 
         case AGREGAR_PRODUCTO_EXITO:
+            // console.log("action" + action.payload);
             return {
                 ...state,
                 loading: false,
@@ -74,7 +75,7 @@ export default function (state = initialState, action) {
         case PRODUCTO_ELIMINAR_EXITO:
             return {
                 ...state,
-                productos: state.productos.filter(producto => producto.id !== state.productoEliminar),
+                productos: state.productos.filter(producto => producto._id !== state.productoEliminar),
                 productoEliminar: null
             };
 
@@ -96,7 +97,7 @@ export default function (state = initialState, action) {
                 ...state,
                 productoEditar: null,
                 productos: state.productos.map(producto => {
-                    return producto.id === action.payload.id ? producto = action.payload : producto;
+                    return producto._id === action.payload._id ? producto = action.payload : producto;
                 })
             };
 

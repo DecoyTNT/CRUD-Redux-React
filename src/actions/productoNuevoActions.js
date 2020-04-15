@@ -13,11 +13,10 @@ export function crearNuevoProductoAction(producto) {
 
         try {
             // Insertar en la API
-            await clienteAxios.post('/productos', producto)
+            const prod = await clienteAxios.post('/productos', producto);
 
             // Si todo sale bien, actualizar el state
-            dispatch(agregarProductoExito(producto));
-
+            dispatch(agregarProductoExito(prod.data.producto));
             // Alerta
             Swal.fire(
                 'Correcto',
